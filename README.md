@@ -6,13 +6,13 @@ On the other hand, when the luminosity sensor detected that it is night (which c
 
 ## Materials:
 
-*Waspmote Board
-*Protoboard
-*miniUSB Cable
-*Red LED
-*Green LED
-*Waspmote Events Board
-*PIR Sensor
-*Luminosity Sensor
-*WIFI Pro Onchip
+- Waspmote Board
+- Protoboard
+- miniUSB Cable
+- Red LED
+- Green LED
+- Waspmote Events Board
+- PIR Sensor
+- Luminosity Sensor
+- WIFI Pro Onchip
 
