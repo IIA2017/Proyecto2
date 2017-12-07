@@ -19,14 +19,22 @@
  *  You should have received a copy of the GNU General Public License 
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>. 
  *  
- *  Version:           3.1
+ *  Version:           3.2
  *  Design:            David Gascón 
  *  Implementation:    Carlos Bello
+ *  
+ *  Modification:      Ángel Oller Oller
+ *                     Carlos Nache Romo
+ *                     Gustavo Martín de Dios
+ *                     Javier López Milán
+ *                     Néstor Pastor Gutiérrez
+ *                     Pedro Fenoy Illacer
  */
 
 #include <WaspSensorEvent_v30.h>
 
 uint8_t value = 0;
+uint32_t luxes = 0;
 
 /*
  * Define object for sensor. Choose board socket. 
@@ -57,7 +65,7 @@ void setup()
   
   // Turn on the sensor board
   Events.ON();
-    
+
   // Firstly, wait for PIR signal stabilization
   value = pir.readPirSensor();
   while (value == 1)
@@ -79,19 +87,26 @@ void loop()
   ///////////////////////////////////////
   // Read the PIR Sensor
   value = pir.readPirSensor();
+  luxes = Events.getLuxes(INDOOR); 
+
+  if (luxes >= 10)
+  {
+    digitalWrite(19, LOW);    // turn the GREEN LED off by making the voltage LOW 
+    digitalWrite(20, LOW);    // turn the RED LED off          
   
   // Print the info
   if (value == 1) 
   {
     USB.println(F("Sensor output: Presence detected"));
-    digitalWrite(19, HIGH);   // turn the GREEN LED  
-    digitalWrite(20, LOW);    // turn the LED off by making the voltage LOW
+    digitalWrite(20, LOW);    // turn the LED off 
+    digitalWrite(19, HIGH);   // turn the GREEN LED on
+
   } 
   else 
   {
-    USB.println(F("Sensor output: Presence not detected"));
-    digitalWrite(20, HIGH);   // turn the RED LED  
-      digitalWrite(19, LOW);    // turn the LED off by making the voltage LOW
+    USB.println(F("Sensor output: Presence not detected")); 
+    digitalWrite(19, LOW);    // turn the LED off by making the voltage LOW
+    digitalWrite(20, HIGH);   // turn the RED LED 
   }
   
   
@@ -142,24 +157,30 @@ void loop()
     // Read the sensor level
     value = pir.readPirSensor();
 
+
   if (value == 1) 
   {
-    USB.println(F("Sensor output: Presence detected"));
-    digitalWrite(19, HIGH);   // turn the GREEN LED
-      digitalWrite(20, LOW);    // turn the LED off by making the voltage LOW  
+          USB.println(F("Sensor output: Presence detected"));
+          digitalWrite(20, LOW);    // turn the LED off by making the voltage LOW
+          digitalWrite(19, HIGH);   // turn the GREEN LED on
+
   } 
   else 
-  {
-    USB.println(F("Sensor output: Presence not detected"));
-    digitalWrite(20, HIGH);   // turn the RED LED
-      digitalWrite(19, LOW);    // turn the LED off by making the voltage LOW
-  }
-    
+    {
+
+          USB.println(F("Sensor output: Presence not detected"));
+          digitalWrite(19, LOW);    // turn the LED off by making the voltage LOW
+          digitalWrite(20, HIGH);   // turn the RED LED
+    }
+     
+ 
+
     while (value == 1)
     {
       USB.println(F("...wait for PIR stabilization"));
       delay(1000);
       value = pir.readPirSensor();
+      luxes = Events.getLuxes(INDOOR);
     }
     
     // Clean the interruption flag
@@ -168,6 +189,25 @@ void loop()
     // Enable interruptions from the board
     Events.attachInt();
   }
+  }
+
+    // Part 1: Read Values
+  // Read the luxes sensor 
+  // Options:
+  //    - OUTDOOR
+  //    - INDOOR
+ else 
+ {
+          digitalWrite(20, LOW);    // turn the LED off by making the voltage LOW
+          digitalWrite(19, HIGH);   // turn the GREEN LED
+ }
+   
+  // Part 2: USB printing
+  // Print values through the USB
+  USB.print(F("Luxes: "));
+  USB.print(luxes);
+  USB.println(F(" lux"));
+  //delay(1000);
   
 }
 
