@@ -17,15 +17,6 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 - WIFI Pro Onchip
 - Batería
 
-
-
-Instalaciones Industriales Avanzadas - Bloque II
-
-Master en Ingeniería Industrial
-
-Universidad de Almería
-
-
 ### Funcionamiento de la placa:
 
 1)El sensor recoge la información de la habitación y se estabiliza.
@@ -37,7 +28,7 @@ Universidad de Almería
 
 1)En el socket 1 de la Waspmote Events Sensor Board v3.0 se ha conectado el sensor de presencia. Esto se ha realizado conectado las patillas de la siguiente forma:
 
-![PIR Sensor](https://github.com/IIA2017/Proyecto2/Imágenes/PIR_sensor.png)
+![PIR Sensor](https://github.com/IIA2017/Proyecto2/Imagenes/PIR_sensor.png)
 
 - La patilla GND se ha conectado en el pin 21 de la Waspmote.
 - La patilla de VCC se ha conectado al pin 17 de la Waspmote.
@@ -74,5 +65,9 @@ En caso de que se produzca una interrupción, se activa una alarma que manda un m
 Por último, en caso de que los luxes estén por debajo de 10 (es de noche) no se realiza el proceso anterior, sino que directamente se mantiene el led verde encendido hasta que el nivel de luxes supere ese umbral.  Un detalle a tener en cuenta es que se ha utilizado la interrupción RCP cada 10 segundos, por lo que la lectura de los luxes no es continua, sino que se realiza una lectura de este sensor en intervalos de este mismo tiempo.
 
 
+Instalaciones Industriales Avanzadas - Bloque II
 
+Master en Ingeniería Industrial
+
+Universidad de Almería
 
