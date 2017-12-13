@@ -19,14 +19,14 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 
 ### Funcionamiento de la placa:
 
-1.El sensor recoge la información de la habitación y se estabiliza.
-2.Tras esto, el sensor enciende una luz roja en caso de que no detecte presencia.
-3.Cuando detecta algún movimiento, el sensor detecta presencia y enciende un led verde.
-4.Por último, se ha establecido que es de noche cuando el nivel de iluminación cae por debajo de los 10 luxes. Cuando el sensor de luminosidad detecta una caída por debajo de este umbral, se detiene todo el proceso anterior y deja encendido el led verde.
+1. El sensor recoge la información de la habitación y se estabiliza.
+2. Tras esto, el sensor enciende una luz roja en caso de que no detecte presencia.
+3. Cuando detecta algún movimiento, el sensor detecta presencia y enciende un led verde.
+4. Por último, se ha establecido que es de noche cuando el nivel de iluminación cae por debajo de los 10 luxes. Cuando el sensor de luminosidad detecta una caída por debajo de este umbral, se detiene todo el proceso anterior y deja encendido el led verde.
 
 ### Configuración de la placa:
 
-1.En el socket 1 de la Waspmote Events Sensor Board v3.0 se ha conectado el sensor de presencia. Esto se ha realizado conectado las patillas de la siguiente forma:
+1. En el socket 1 de la Waspmote Events Sensor Board v3.0 se ha conectado el sensor de presencia. Esto se ha realizado conectado las patillas de la siguiente forma:
 
 
 
@@ -35,7 +35,7 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 - La patilla de VCC se ha conectado al pin 17 de la Waspmote.
 - La salida del sensor se ha conectado al pin 18 de la Waspmote.
 
-2.  El socket 5 de esta placa se ha utilizado para conectar el sensor de luminosidad.
+2. El socket 5 de esta placa se ha utilizado para conectar el sensor de luminosidad.
 
 3. En la placa Waspmote PRO v1.5 se han utilizado los pines Analog 6 para encender el led verde y la Analog 7 para el led rojo.
 
