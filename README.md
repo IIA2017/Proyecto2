@@ -28,7 +28,7 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 
 1. En el socket 1 de la Waspmote Events Sensor Board v3.0 se ha conectado el sensor de presencia. Esto se ha realizado conectado las patillas de la siguiente forma:
 
-
+![PIR Sensor](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/PIR_sensor.png)
 
 
 - La patilla GND se ha conectado en el pin 21 de la Waspmote.
