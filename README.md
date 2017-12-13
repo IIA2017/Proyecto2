@@ -17,6 +17,9 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 - WIFI Pro Onchip
 - Batería
 
+![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmote.png)
+![waspmoteinout](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmoteinout.png)
+
 ### Funcionamiento de la placa:
 
 1. El sensor recoge la información de la habitación y se estabiliza.
@@ -25,6 +28,8 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 4. Por último, se ha establecido que es de noche cuando el nivel de iluminación cae por debajo de los 10 luxes. Cuando el sensor de luminosidad detecta una caída por debajo de este umbral, se detiene todo el proceso anterior y deja encendido el led verde.
 
 ### Configuración de la placa:
+
+![events](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/events_board.png)
 
 1. En el socket 1 de la Waspmote Events Sensor Board v3.0 se ha conectado el sensor de presencia. Esto se ha realizado conectado las patillas de la siguiente forma:
 
