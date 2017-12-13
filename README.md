@@ -46,25 +46,35 @@ Para la programación del sensor PIR, se han partido de los siguientes ejemplos: 
  
 En primer lugar se definen las bibliotecas a utilizar y las variables que posteriormente utilizaremos. Además se asocia el sensor pir con su socket correspondiente.
 
-
+![code1](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code1.png)
 
 
 Tras esto se inicia el programa y se establecen los pines 19 y 20 como salidas. Además se activa por primera vez el sensor PIR para su estabilización y se activan las interrupciones.
 
+![code2](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code2.png)
+
 Una vez estabilizado el sensor, se comienza a leer la información del sensor y a su vez entra en funcionamiento el sensor de luminosidad. Si el nivel de luminosidad está por encima de 10 luxes (hemos tomado que por encima de 10 luxes es de día) existen dos posibilidades:
 
-El sensor PIR detecta movimiento (value==1) y, tras apagar el led rojo, enciende el led verde.
-El sensor PIR no detecta movimiento y se enciende el led rojo. 
+- El sensor PIR detecta movimiento (value==1) y, tras apagar el led rojo, enciende el led verde.
+- El sensor PIR no detecta movimiento y se enciende el led rojo. 
+
+![code3](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code3.png)
+
 Realizada la primera comprobación, el sensor PIR entra en modo sleep durante 10 segundos o hasta que se produzca una interrupción.
+
+![code4](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code4.png)
 
 En caso de que se produzca una interrupción, se activa una alarma que manda un mensaje por pantalla avisando de la misma.
 
+![code5](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code5.png)
+
  Inmediatamente después de la interrupción se realiza una nueva lectura del sensor, repitiendose el proceso explicado anteriormente para encender un led u otro. Por otro lado, una vez terminado este proceso se para la interrupción.
 
-
+![code6](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code6.png)
 
 Por último, en caso de que los luxes estén por debajo de 10 (es de noche) no se realiza el proceso anterior, sino que directamente se mantiene el led verde encendido hasta que el nivel de luxes supere ese umbral.  Un detalle a tener en cuenta es que se ha utilizado la interrupción RCP cada 10 segundos, por lo que la lectura de los luxes no es continua, sino que se realiza una lectura de este sensor en intervalos de este mismo tiempo.
 
+![code7](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code7.png)
 
 Instalaciones Industriales Avanzadas - Bloque II
 
