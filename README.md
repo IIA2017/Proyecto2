@@ -1,27 +1,27 @@
-# Proyect 2: 
+# Proyecto 2: 
 
-When the presence detector does not detect any person, there is a red LED on. When said detector verifies that there is a person who turns on a green led light and shows on the screen the time at which it has detected the presence.
-On the other hand, when the luminosity sensor detected that it is night (which can put a level of luminosity that is at night), that turns on the green led. Meanwhile, it's off.
+Cuando el detector de presencia no detecte ninguna persona, que haya un led rojo encendido. Cuando dicho detector compruebe que hay una persona que se encienda una luz led verde y muestre por pantalla la hora en la que ha detectado la presencia. 
+Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá que establecer un nivel de luminosidad que sea de noche), que encienda el led verde. Mientras tanto, que esté apagado. 
 
 
-## Materials:
+## Materiales:
 
-- Waspmote Board
-- Protoboard
+- Placa Waspmote
+- Placa de prototipado
 - miniUSB Cable
-- Red LED
-- Green LED
-- Waspmote Events Board
-- PIR Sensor
-- Luminosity Sensor
+- Luz led rojo
+- Luz led verde
+- 1x Waspmote Events Board
+- 1x PIR Sensor
+- 1x Luminosity Sensor
 - WIFI Pro Onchip
+- Batería
 
 
 
+Instalaciones Industriales Avanzadas - Bloque II
 
-Advanced Industrial Facilities - Block II
+Master en Ingeniería Industrial
 
-Master's Degree in Industrial Engineering
-
-University of Almería
+Universidad de Almería
 
