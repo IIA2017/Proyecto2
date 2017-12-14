@@ -6,22 +6,28 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 
 ## Materiales:
 
-- Placa Waspmote ![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmote.png)
+- Placa Waspmote 
+![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmote.png)
 - Placa de prototipado  
-- miniUSB Cable ![miniUSB](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/cable_usb.jpg)
-- Luz led rojo ![led](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/led.jpg)
-- Luz led verde ![led](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/led.jpg)
-- 1x Waspmote Events Board ![events](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/events_board.png)
-- 1x PIR Sensor ![PIR](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/PIR_sensor.png)
-- 1x Luminosity Sensor ![luminosity](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/PIR_luminosity.png)
-- WIFI Pro Onchip ![wifi](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/wifi.png)
+- miniUSB Cable 
+![miniUSB](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/cable_usb.jpg)
+- Luz led rojo 
+![led](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/led.jpg)
+- Luz led verde 
+![led](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/led.jpg)
+- 1x Waspmote Events Board 
+![events](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/events_board.png)
+- 1x PIR Sensor 
+![PIR](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/PIR_sensor.png)
+- 1x Luminosity Sensor 
+![luminosity](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/PIR_luminosity.png)
+- WIFI Pro Onchip 
+![wifi](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/wifi.png)
 - Batería
 
 
 
 
-![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmote.png)
-![waspmoteinout](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmoteinout.png)
 
 ### Funcionamiento de la placa:
 
