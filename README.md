@@ -17,9 +17,9 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 - WIFI Pro Onchip
 - Batería
 
-## Materiales: | 
+## Materiales: | Imagen
 ------------ | :-------------:
-- Placa Waspmote | ![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmote.png)
+- Placa Waspmote | <img src="imagenes/waspmote.png" width="250">
 - Placa de prototipado | 
 - miniUSB Cable | ![miniUSB](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/cable_usb.jpg)
 - Luz led rojo | ![led](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/led.jpg)
