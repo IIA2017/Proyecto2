@@ -10,7 +10,9 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 
 ![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmote.png)
 
-- Placa de prototipado  
+- Placa de prototipado 
+
+![prototipado](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/prototipado.jpg) 
 
 - miniUSB Cable 
 
@@ -37,9 +39,12 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 ![luminosity](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/luminosity.png)
 
 - WIFI Pro Onchip 
+
 ![wifi](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/wifi.png)
+
 - Batería
 
+![bateria](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/bateria.png)
 
 
 
