@@ -51,6 +51,8 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 
 ### Funcionamiento de la placa:
 
+![waspmote](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/waspmoteinout.png)
+
 1. El sensor recoge la información de la habitación y se estabiliza.
 2. Tras esto, el sensor enciende una luz roja en caso de que no detecte presencia.
 3. Cuando detecta algún movimiento, el sensor detecta presencia y enciende un led verde.
