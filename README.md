@@ -44,7 +44,7 @@ Por otro lado, cuando el sensor de luminosidad detecte que es de noche (habrá qu
 
 - Batería
 
-![bateria](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/bateria.png)
+![bateria](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/bateria.jpg)
 
 
 
