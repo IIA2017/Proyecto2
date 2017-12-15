@@ -112,6 +112,142 @@ Por último, en caso de que los luxes estén por debajo de 10 (es de noche) no se 
 
 ![code7](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code7.png)
 
+
+
+
+### Ampliación: ¿Cómo podría enviarse la hora de la última detección de presencia a otra placa Waspmote utilizando WIFI Pro Onchip?
+
+#### Inicialización fecha y hora
+
+En primer lugar, es necesario introducir la fecha y hora en la placa. En función de los componentes que se disponen no es posible leer los datos a partir del sistema al que esta se encuentra conectada, para que la placa realizase dicha operación de forma autónoma los datos de día y hora se deberían leer a partir de una tarjeta con conexión GPRS o 3G.
+A continuación, se describe el código que realiza dicha operación de almacenamiento de los datos de hora y fecha.
+Se requiere por pantalla que es necesario almacenar los datos correspondientes.
+ 
+![code8](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code8.png)
+
+A partir de este punto se requiere que se introduzcan por pantalla los datos actuales correspondientes a: año, mes, día, horas, minutos y segundos. Estas acciones están apoyadas por la función GetData() que se mostrará posteriormente.
+
+-	Introducción del año:
+ 
+![code9](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code9.png)
+
+-	Introducción del mes:
+ 
+![code10](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code10.png)
+
+-	Introducción del día:
+ 
+![code11](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code11.png)
+
+-	Introducción de la hora:
+ 
+![code12](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code12.png)
+
+-	Introducción de los minutos:
+ 
+![code13](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code13.png)
+
+-	Introducción de los segundos:
+ 
+![code14](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code14.png)
+
+Se crea un buffer en el cual se almacenan los datos que se han ido requiriendo por pantalla, para tenerlos disponibles cuando en los siguientes pasos sea necesario su uso.
+ 
+![code15](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code15.png)
+
+Finalmente, con la función RTC.setTime se actualiza la información de fecha y hora que utilizará la placa.
+
+Con la función siguiente se verifica que los datos que se van introduciendo en los puntos anteriores son de dos enteros como máximo, cabe mencionar, que es necesario introducir los datos de forma correcta, ya que la siguiente función no diferencia entre datos válidos o no.
+ 
+ 
+![code16](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code16.png)
+
+
+
+#### Envío de aviso
+
+Para la comunicación de la placa WASPMOTE, dada la imposibilidad de realizar la simulación de comunicación con otra placa, por la falta de material, se ha decidido realizar la comunicación mediante el Protocolo de Control de Transmisión con un teléfono móvil.
+ El Protocolo de control de transmisión (en inglés Transmission Control Protocol o TCP), es uno de los protocolos fundamentales en Internet. Fue creado entre los años 1973 y 1974 por Vint Cerf y Robert Kahn.
+Muchos programas dentro de una red de datos compuesta por redes de computadoras pueden usar TCP para crear “conexiones” entre sí a través de las cuales puede enviarse un flujo de datos. El protocolo garantiza que los datos serán entregados en su destino sin errores y en el mismo orden en que se transmitieron. También proporciona un mecanismo para distinguir distintas aplicaciones dentro de una misma máquina, a través del concepto de puerto.
+TCP da soporte a muchas de las aplicaciones más populares de Internet (navegadores, intercambio de ficheros, clientes FTP, etc.) y protocolos de aplicación HTTP, SMTP, SSH y FTP.
+ 
+- Funcionamiento del protocolo en detalle:
+
+Las conexiones TCP se componen de tres etapas:
+1. Establecimiento de conexión.
+2. Transferencia de datos.
+3. Fin de la conexión.
+Para establecer la conexión se usa el procedimiento llamado “negociación en tres pasos” (3-way handshake). Para la desconexión se usa una “negociación en cuatro pasos” (4-way handshake). Durante el establecimiento de la conexión, se configuran algunos parámetros tales como el número de secuencia con el fin de asegurar la entrega ordenada de los datos y la robustez de la comunicación.
+
+A partir de este punto se describe el código que realiza la operación anterior:
+Inicialización de la función:   
+ 
+![code17](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code17.png)
+
+La tarjeta WIFI PRO onChip está conectada al SOCKET0, se inicializa este socket y se define el nombre de la red junto la contraseña.
+Para definir el servidor, que estará conectado a la misma red se necesita definir el HOST y el PUERTO.
+A continuación, se explican los pasos llevados a cabo para la comunicación de WASPMOTE con el servidor
+ 
+Activación de la placa WIFI PRO ON CHIP:
+ 
+![code18](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code18.png)
+
+Se restablecen los valores predeterminados por defecto:
+ 
+![code19](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code19.png)
+
+WIFI PRO ON CHIP busca el nombre de la red proporcionado y verifica que coincide:
+ 
+![code20](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code20.png)
+
+Al igual que en el código anterior verifica que coincide la contraseña:
+ 
+![code21](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code21.png)
+
+Una vez que el módulo se ha establecido en la configuración correcta, se mantienen en la memoria no volátil del módulo. Además, es obligatorio reiniciar el módulo para obligar al módulo a usar la nueva configuración. Por lo que la función softReset () se usa para realizar un restablecimiento de software al módulo. Después de llamar a esta función, la nueva configuración tendrá efecto.
+ 
+![code22](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code22.png)
+
+Una vez que el módulo tiene una configuración válida en la memoria no volátil, automáticamente comienza a buscar unirse al punto de acceso. La función isConnected () permite saber si el módulo WiFi PRO ya está conectado al punto de acceso. Esta función devuelve valores verdaderos o falsos para proporcionar la información de estado.
+ 
+![code23](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code23.png)
+
+La función ping () envía un paquete de solicitud ICMP PING de dos bytes al host remoto definido como argumento de entrada. La entrada de la función puede ser un nombre lógico del host de destino o una dirección IP de host. Al recibir con éxito una respuesta ICMP PING del host, el tiempo de ida y vuelta en milisegundos se devuelve (RTT).
+ 
+![code24](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code24.png)
+
+La función setTCPclient () abre un socket de cliente de Protocolo de control de transmisión (TCP) e intenta conectarse al puerto especificado en el servidor definido como entrada. Por lo tanto, esta función necesita tres entradas diferentes:
+- Host: el nombre del servidor puede ser cualquier nombre legal de servidor de Internet que pueda resolverse mediante el DNS del módulo (Dominio Configuración del Servidor de nombres). El nombre del servidor también se puede especificar como una dirección IP absoluta dada en punto decimal notación.
+- Puerto remoto: se supone que el sistema del servidor está escuchando en el puerto especificado.
+- Puerto local: este es el puerto local cuando se abre el socket TCP.
+ 
+![code251](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code251.png)
+![code252](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code252.png)
+
+La función send () envía una secuencia de bytes al socket especificado por la entrada del manejador de socket. Esta función necesita dos entradas diferentes:
+- Socket handle: Un manejador de socket TCP / UDP de un socket previamente abierto.
+- Data: esta es la secuencia de datos para enviar al socket TCP / UDP. Este flujo de datos se puede definir como un simple mensaje de cadena o una matriz de bytes, especificando una tercera entrada para la longitud de la matriz de bytes a enviar.
+ 
+![code26](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code26.png)
+
+La función receive () recibe una secuencia de bytes del socket TCP / UDP especificado por el socket handle. Los datos recibidos sólo son válidos si ya se encuentran en el búfer de entrada del socket del módulo en el momento en que se emite este comando.
+
+![code27](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code27.png)
+
+
+La función closeSocket () permite al usuario cerrar un cliente TCP / UDP previamente abierto. La función necesita un parámetro de entrada para el identificador de socket:
+Socket handle: el identificador de socket utilizado para abrir la conexión.
+ 
+![code28](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code28.png)
+ 
+A continuación, se muestra cómo aparece en el receptor de la información a través del WiFi.
+ 
+![mensaje](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/mensaje.png)
+
+
+
+
+
 Instalaciones Industriales Avanzadas - Bloque II
 
 Master en Ingeniería Industrial
