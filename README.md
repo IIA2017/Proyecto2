@@ -222,6 +222,7 @@ La función setTCPclient () abre un socket de cliente de Protocolo de control de 
 - Puerto local: este es el puerto local cuando se abre el socket TCP.
  
 ![code251](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code251.png)
+
 ![code252](https://github.com/IIA2017/Proyecto2/blob/master/Imagenes/code252.png)
 
 La función send () envía una secuencia de bytes al socket especificado por la entrada del manejador de socket. Esta función necesita dos entradas diferentes:
